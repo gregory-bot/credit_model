@@ -1,0 +1,30 @@
+# MoPhones Credit Scoring — Dependencies
+# Install: pip install -r requirements.txt
+
+# ── Data ──────────────────────────────────────────────────────────────────────
+pandas>=2.0
+numpy>=1.24
+openpyxl>=3.1          # Excel (.xlsx) reading
+scipy>=1.11
+
+# ── ML ────────────────────────────────────────────────────────────────────────
+scikit-learn>=1.4
+xgboost>=2.0
+lightgbm>=4.0
+imbalanced-learn>=0.12  # SMOTE (optional — currently using class_weight)
+
+# ── Explainability ────────────────────────────────────────────────────────────
+shap>=0.44
+
+# ── Visualisation ─────────────────────────────────────────────────────────────
+matplotlib>=3.8
+seaborn>=0.13
+
+# ── API ───────────────────────────────────────────────────────────────────────
+fastapi>=0.111
+uvicorn[standard]>=0.29
+pydantic>=2.0
+
+# ── Notebook ──────────────────────────────────────────────────────────────────
+jupyter>=1.0
+ipykernel>=6.0
