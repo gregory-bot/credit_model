@@ -10,8 +10,8 @@ IS_PRODUCTION = IS_RENDER or os.getenv("PRODUCTION", "").lower() == "true"
 
 # ── Paths ──────────────────────────────────────────────────────────────────────
 if IS_RENDER:
-    # Render deployment paths
-    BASE_DIR = Path("/opt/render/project/src")
+    # Render Docker deployment paths (WORKDIR is /app)
+    BASE_DIR = Path("/app")
 else:
     # Local development - get project root (parent of credit_scoring package)
     BASE_DIR = Path(__file__).parent.parent
@@ -22,9 +22,9 @@ OUTPUTS_DIR = BASE_DIR / "outputs"
 SALES_FILE  = BASE_DIR / "Sales and Customer Data.xlsx"
 NPS_FILE    = BASE_DIR / "NPS Data.xlsx"
 
-# Create directories if they don't exist
-MODELS_DIR.mkdir(exist_ok=True)
-OUTPUTS_DIR.mkdir(exist_ok=True)
+# Create directories if they don't exist (with parents for Render safety)
+MODELS_DIR.mkdir(exist_ok=True, parents=True)
+OUTPUTS_DIR.mkdir(exist_ok=True, parents=True)
 
 # ── Credit snapshot files ──────────────────────────────────────────────────────
 CREDIT_FILES = [
