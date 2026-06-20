@@ -1,4 +1,4 @@
-# MoPhones Credit Scoring Engine
+# Credit Scoring Engine
 
 > **From descriptive analytics to a production credit scoring model.**
 > Predicts Probability of Default, generates credit scores (300–850), and explains decisions using SHAP.
